@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Week17-ErrorHandlingWebsite",
+    "\\Week17-ErrorHandlingWebsite\\ErrorProneWebsite",
+    "\\Week17-ErrorHandlingWebsite\\ErrorProneWebsite\\Properties"
   ],
-  "SelectedNode": "\\Week18-BuildingConfiguringAndDeploying.sln",
+  "SelectedNode": "\\Week17-ErrorHandlingWebsite\\ErrorProneWebsite\\Properties\\AssemblyInfo.cs",
   "PreviewInSolutionExplorer": false
 }
