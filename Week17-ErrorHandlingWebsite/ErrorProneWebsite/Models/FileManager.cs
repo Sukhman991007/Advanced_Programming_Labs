@@ -23,10 +23,41 @@ namespace ErrorProneWebsite.Models
 
         public string GetContent()
         {
+            string contentMessage = string.Empty;
+           StreamReader streamReader = null;
+            try
+            {
+               
+                {
+                    contentMessage = streamReader.ReadToEnd();
+                }
+            }
+            catch (FileNotFoundException ex)
+            {
+                contentMessage = string.Format("{0}{1}{2}", "Oops! The content could not be found at the location specified.", Environment.NewLine, ex.Message);
 
-            StreamReader streamReader = new StreamReader(_contentFilePath);
 
+            }
+            
+            finally
+            {
+                if (streamReader != null) streamReader.Close();
+            }
+            
             return streamReader.ReadToEnd();
         }
+
+        public string GetEvenMoreContent()
+        {
+            string contentMessage = String.Empty;
+            if (!File.Exists(_contentFilePath)) throw new FileNotFoundException(
+           "The content file doesn't exist in the location specified...");
+            using (StreamReader streamReader = new StreamReader(_contentFilePath))
+            {
+                contentMessage = streamReader.ReadToEnd();
+            }
+            return contentMessage;
+        }
+
     }
 }
